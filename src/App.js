@@ -23,11 +23,36 @@ const useStyles = makeStyles({
 export default function App() {
   const [tableData, setTableData] = useState()
   const columns = [
-    {title: "Name", field: "name", headerStyle:{fontWeight: "bold", fontSize: '1rem'}},
-    {title: "Username", field: "username", headerStyle:{fontWeight: "bold", fontSize: '1rem'}},
-    {title: "Email", field: "email", headerStyle:{fontWeight: "bold", fontSize: '1rem'}},
-    {title: "Phone", field: "phone", headerStyle:{fontWeight: "bold", fontSize: '1rem'}},
-    {title: "Website", field: "website", headerStyle:{fontWeight: "bold", fontSize: '1rem'}}
+    {
+      title: "Name",
+      field: "name", 
+      headerStyle:{fontWeight: "bold", fontSize: '1rem'},
+      validate: rowData=>rowData.name === undefined || rowData.name === ""?"Required":true
+    },
+    {
+      title: "Username",
+      field: "username", 
+      headerStyle:{fontWeight: "bold", fontSize: '1rem'},
+      validate: rowData=>rowData.username === undefined || rowData.username === ""?"Required":true
+    },
+    {
+      title: "Email",
+      field: "email", 
+      headerStyle:{fontWeight: "bold", fontSize: '1rem'},
+      validate: rowData=>rowData.email === undefined || rowData.email === ""?"Required":true
+    },
+    {
+      title: "Phone",
+      field: "phone", 
+      headerStyle:{fontWeight: "bold", fontSize: '1rem'},
+      validate: rowData=>rowData.phone === undefined || rowData.phone === ""?"Required":true
+    },
+    {
+      title: "Website",
+      field: "website", 
+      headerStyle:{fontWeight: "bold", fontSize: '1rem'},
+      validate: rowData=>rowData.website === undefined || rowData.website === ""?"Required":true
+    }
   ]
 
   const classes = useStyles()
